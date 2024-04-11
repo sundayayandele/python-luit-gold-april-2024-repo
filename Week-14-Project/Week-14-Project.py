@@ -12,12 +12,15 @@ for file in current_files:
     #if os.path.isdir(file) == 
     if os.path.isfile(file):
         #print(os.path.isfile(file), file)
+        
         filepath = os.getcwd() + '/' + file
         size = os.path.getsize(filepath)
         file_info = {"path": filepath, "size": size}
+        current_filepaths.append(file_info)
         #print(filepath, size)
-        print(file_info)
+        #print(file_info)
     #print(filepath)
     #print(os.path.getsize(filepath))
     #filepath = 
     #current_filepaths.append()
+print(current_filepaths)
