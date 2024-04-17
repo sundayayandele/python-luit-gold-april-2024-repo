@@ -16,12 +16,13 @@ def list_object_keys(client, bucket, prefix=""):
         keys.append(content["Key"])
         
     return keys
+
+if __name__ == "__main__":
+    s3 = boto3.client("s3")
     
-s3 = boto3.client("s3")
+    response = list_object_keys(s3, "skhan-boto3-04152024", "folder/")
+    print(response)
 
-response = list_object_keys(s3, "skhan-boto3-04152024", "folder/")
-print(response)
-
-
-#response = filter_objects_extension(s3, "skhan-boto3-04152024", "folder/")
-#print(response)
+    
+    response = filter_objects_extension(s3, "skhan-boto3-04152024", "/")
+    print(response)
