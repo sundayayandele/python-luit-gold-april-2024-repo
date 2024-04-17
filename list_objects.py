@@ -11,7 +11,7 @@ def filter_objects_extension(client, bucket, extension):
     
 def list_object_keys(client, bucket, prefix=""):
     keys = []
-    response = client.list_objects_v2(Bucket=bucket, Filter=prefix)
+    response = client.list_objects_v2(Bucket=bucket)
     for content in response["Contents"]:
         keys.append(content["Key"])
         
