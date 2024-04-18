@@ -10,6 +10,12 @@ for reservation in response["Reservations"]:
         instance["ImageId"], instance["VpcId"], instance["SubnetId"],
         instance["State"]["Name"])
         
+        if "VpcId" in instance:
+            instance["VpcId"]
+            
+        if "SubnetId" in instance:
+            instance["SubnetId"]
+        
         if "Tags" in instance:
             for tag in instance["Tags"]:
                 if tag["Key"] == "Name":
